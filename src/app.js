@@ -2,7 +2,9 @@ const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
 const open = require('./openweather.js')
+
 const app = express()
+const port = process.env.PORT || 3000
 
 const publicDirectoryPath = path.join(__dirname, '../web')
 const viewspath = path.join(__dirname,'../templates/views')
@@ -73,6 +75,6 @@ app.get('*',(req,res) => {
     res.send("<h1>MY 404 PAGE<\h1>")
 })
 
-app.listen(3000,() => {
-    console.log("SERVER IS UP AND RUNNING IN PORT 3000")
+app.listen(port,() => {
+    console.log("SERVER IS UP AND RUNNING IN PORT")
 })

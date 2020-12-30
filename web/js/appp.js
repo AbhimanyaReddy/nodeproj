@@ -1,7 +1,7 @@
 function ret() {
     let c = document.getElementById("zeff").value
     c = '"'+c+'"'
-    const v = "http://localhost:3000/weather?address="+c
+    const v = "/weather?address="+c
     fetch(v).then((response ) => {
         response.json().then((data) => {
             if (data.cod === "404"){
